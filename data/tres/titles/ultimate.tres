@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TitleData" load_steps=2 format=3 uid="uid://c8yyjrfu6rpvs"]
+
+[ext_resource type="Script" uid="uid://mlia14u2k10n" path="res://data/data_resources/title_data.gd" id="1_gue3t"]
+
+[resource]
+script = ExtResource("1_gue3t")
+id = "ultimate"
+name = "究極の"
+bonus_hlt = 30
+bonus_spd = 30
+bonus_slh = 30
+bonus_blt = 30
+bonus_alt = 30
+bonus_slr = 30
+bonus_blr = 30
+bonus_alr = 30

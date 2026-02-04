@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="MedalData" load_steps=12 format=3 uid="uid://fmkab2bt48xp"]
+
+[ext_resource type="Script" uid="uid://cpv8mpsqiq303" path="res://data/enums/element_type.gd" id="1_5714b"]
+[ext_resource type="Script" uid="uid://dulcdx37632oo" path="res://data/data_resources/skill_data.gd" id="2_uqs60"]
+[ext_resource type="Script" uid="uid://bm4mw7u8ibfjv" path="res://data/data_resources/medal_data.gd" id="3_dope6"]
+[ext_resource type="Script" uid="uid://c8ge437vlu21b" path="res://data/enums/affinity_type.gd" id="4_d0a0t"]
+
+[sub_resource type="Resource" id="Resource_t078r"]
+script = ExtResource("1_5714b")
+element = 3
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_jpgef"]
+script = ExtResource("1_5714b")
+element = 4
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_l6u22"]
+script = ExtResource("1_5714b")
+element = 5
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_gbkls"]
+script = ExtResource("1_5714b")
+element = 6
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_vkgni"]
+script = ExtResource("4_d0a0t")
+metadata/_custom_type_script = "uid://c8ge437vlu21b"
+
+[sub_resource type="Resource" id="Resource_5714b"]
+script = ExtResource("4_d0a0t")
+affinity = 3
+metadata/_custom_type_script = "uid://c8ge437vlu21b"
+
+[sub_resource type="Resource" id="Resource_uqs60"]
+script = ExtResource("4_d0a0t")
+affinity = 2
+metadata/_custom_type_script = "uid://c8ge437vlu21b"
+
+[resource]
+script = ExtResource("3_dope6")
+icon_path = "res://assets/medals/icon/fraglow.png"
+medal_id = "fraglow"
+name = "NAME_FRAGLOW"
+control_cost = 1
+base_hlt = 60
+base_slh = 20
+base_blt = 30
+base_alt = 70
+base_slr = 40
+base_blr = 60
+base_alr = 60
+base_spd = 40
+elements = Array[ExtResource("1_5714b")]([SubResource("Resource_l6u22"), SubResource("Resource_gbkls")])
+effectiveness_elements = Array[ExtResource("1_5714b")]([SubResource("Resource_t078r"), SubResource("Resource_jpgef")])
+weakness_affinity = Array[ExtResource("4_d0a0t")]([SubResource("Resource_vkgni"), SubResource("Resource_5714b"), SubResource("Resource_uqs60")])
+primary_color = Color(0.21568628, 0.5254902, 0.101960786, 1)
+secondary_color = Color(0.7764706, 0.88235295, 0.27058825, 1)

@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjy0mc6bghxer"]
+
+[ext_resource type="Script" uid="uid://csrwn267dq6b8" path="res://scenes/UI/scripts/medal_ui.gd" id="1_c4lwt"]
+[ext_resource type="Texture2D" uid="uid://b5jed32xur8vi" path="res://assets/medals/back.png" id="1_er4bv"]
+[ext_resource type="Texture2D" uid="uid://d25u01b6qcklr" path="res://assets/medals/line.png" id="2_h3gv4"]
+[ext_resource type="Shader" uid="uid://ds0ljv1fyxck6" path="res://assets/shader/medal.gdshader" id="3_c4lwt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2nsjh"]
+shader = ExtResource("3_c4lwt")
+shader_parameter/radius = 0.5
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/smoothness = 0.01
+
+[node name="MedalUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 70.0
+offset_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_c4lwt")
+
+[node name="background" type="TextureRect" parent="."]
+texture_filter = 4
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 70.0
+texture = ExtResource("1_er4bv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="icon" type="TextureRect" parent="background"]
+texture_filter = 2
+texture_repeat = 1
+material = SubResource("ShaderMaterial_2nsjh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="line" type="TextureRect" parent="background"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h3gv4")
+expand_mode = 1
+stretch_mode = 4

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EncounterData" load_steps=2 format=3 uid="uid://dxcmkg3ux2v75"]
+
+[ext_resource type="Script" uid="uid://cw6d1324rtnip" path="res://data/data_resources/enemy_data.gd" id="1_wyog2"]
+
+[resource]
+script = ExtResource("1_wyog2")
+encounter_id = "akihito"
+name = "アキヒト"
+icon_id = null
+intelligence = 10
+party = null

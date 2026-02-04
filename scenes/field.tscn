@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://cak1y2wg4cuhx"]
+
+[ext_resource type="PackedScene" uid="uid://cumg7t3jbm0s2" path="res://scenes/characters/player.tscn" id="1_tcubs"]
+[ext_resource type="Script" uid="uid://b8jkvogse3lt8" path="res://scenes/UI/scripts/menu.gd" id="2_7156t"]
+[ext_resource type="FontFile" uid="uid://35ejt2lpdokd" path="res://assets/fonts/ZenKakuGothicNew-Black.ttf" id="2_lptdg"]
+[ext_resource type="Script" uid="uid://cts4xi8gbtadg" path="res://scenes/scripts/field_controller.gd" id="2_ttalb"]
+[ext_resource type="StyleBox" uid="uid://vgbudgiuuyxt" path="res://scenes/UI/standard_frame.tres" id="3_7156t"]
+[ext_resource type="Script" uid="uid://cntds3rkff5vj" path="res://scenes/scripts/ui_controller.gd" id="4_5qjf2"]
+[ext_resource type="StyleBox" uid="uid://b5kbwv7cw8oso" path="res://scenes/UI/standard_hover.tres" id="4_wnvii"]
+[ext_resource type="StyleBox" uid="uid://c2hg57wrdang6" path="res://scenes/UI/standard_outline.tres" id="5_tcubs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjqoj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7156t"]
+font = ExtResource("2_lptdg")
+font_size = 24
+
+[node name="Field" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_tcubs")]
+
+[node name="AreaRoot" type="Node2D" parent="."]
+
+[node name="UIController" type="Node" parent="."]
+script = ExtResource("4_5qjf2")
+
+[node name="FieldController" type="Node" parent="."]
+script = ExtResource("2_ttalb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FieldUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="Control" parent="CanvasLayer/FieldUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_7156t")
+
+[node name="PartyEdit" type="Button" parent="CanvasLayer/FieldUI/Menu"]
+layout_mode = 1
+offset_left = -128.0
+offset_top = -168.0
+offset_right = 128.0
+offset_bottom = -120.0
+theme_override_styles/normal = ExtResource("3_7156t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vjqoj")
+theme_override_styles/hover = ExtResource("4_wnvii")
+theme_override_styles/focus = ExtResource("5_tcubs")
+
+[node name="Label" type="Label" parent="CanvasLayer/FieldUI/Menu/PartyEdit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MENU_PARTYEDIT"
+label_settings = SubResource("LabelSettings_7156t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/FieldUI/Menu"]
+z_index = -1
+layout_mode = 0
+offset_left = -128.0
+offset_top = -192.0
+offset_right = 128.0
+offset_bottom = 192.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_7156t")
+
+[connection signal="pressed" from="CanvasLayer/FieldUI/Menu/PartyEdit" to="CanvasLayer/FieldUI/Menu" method="_on_party_button_pressed"]

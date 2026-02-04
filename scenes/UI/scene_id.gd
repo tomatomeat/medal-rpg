@@ -1,0 +1,6 @@
+enum {
+	FIELD,
+	BATTLE,
+	PARTYEDIT,
+	MAIN,
+}

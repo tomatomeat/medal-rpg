@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="MedalSaveData" load_steps=2 format=3 uid="uid://cjcxauxgdenq5"]
+
+[ext_resource type="Script" uid="uid://clb732lsclfgn" path="res://data/data_resources/medal_save_data.gd" id="1_eu1wr"]
+
+[resource]
+script = ExtResource("1_eu1wr")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AreaData" load_steps=3 format=3 uid="uid://cwyisygpv1la2"]
+
+[ext_resource type="PackedScene" uid="uid://cdleotrscyroo" path="res://scenes/area/test.tscn" id="1_5nhto"]
+[ext_resource type="Script" uid="uid://bj2b7qnn5xr4y" path="res://data/data_resources/area_data.gd" id="1_831js"]
+
+[resource]
+script = ExtResource("1_831js")
+area_id = "test"
+scene = ExtResource("1_5nhto")
+display_name = "test"

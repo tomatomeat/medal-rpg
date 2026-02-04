@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EncounterZoneData" load_steps=8 format=3 uid="uid://c58le4rjd46af"]
+
+[ext_resource type="Script" uid="uid://oc1dynskpigk" path="res://data/data_resources/encounter_zone_data.gd" id="1_440qr"]
+[ext_resource type="Script" uid="uid://cqbc85bbye2ly" path="res://data/data_resources/encount_medal_pool_entry.gd" id="1_q7ovt"]
+[ext_resource type="Script" uid="uid://dwd5ccn8smi3n" path="res://data/data_resources/encounter_medal_pool.gd" id="2_q7ovt"]
+
+[sub_resource type="Resource" id="Resource_vnao0"]
+script = ExtResource("1_q7ovt")
+medal_id = "fraglow"
+metadata/_custom_type_script = "uid://cqbc85bbye2ly"
+
+[sub_resource type="Resource" id="Resource_q7ovt"]
+script = ExtResource("1_q7ovt")
+medal_id = "sifaio"
+metadata/_custom_type_script = "uid://cqbc85bbye2ly"
+
+[sub_resource type="Resource" id="Resource_ars8t"]
+script = ExtResource("1_q7ovt")
+medal_id = "riroffar"
+metadata/_custom_type_script = "uid://cqbc85bbye2ly"
+
+[sub_resource type="Resource" id="Resource_4mfll"]
+script = ExtResource("2_q7ovt")
+entries = Array[ExtResource("1_q7ovt")]([SubResource("Resource_vnao0"), SubResource("Resource_q7ovt"), SubResource("Resource_ars8t")])
+metadata/_custom_type_script = "uid://dwd5ccn8smi3n"
+
+[resource]
+script = ExtResource("1_440qr")
+zone_id = "test"
+base_level = 5
+medal_pool = SubResource("Resource_4mfll")
+encounter_pool = Array[String]([""])

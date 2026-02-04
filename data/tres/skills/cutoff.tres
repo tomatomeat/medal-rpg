@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://31c7kssyyvct"]
+
+[ext_resource type="Script" uid="uid://ctqycfeumq2je" path="res://data/data_resources/effect_data.gd" id="1_pvjr2"]
+[ext_resource type="Script" uid="uid://dulcdx37632oo" path="res://data/data_resources/skill_data.gd" id="2_twji0"]
+
+[resource]
+script = ExtResource("2_twji0")
+skill_id = "cutoff"
+name = "切り裂く"
+base_damage = 40
+touch = true

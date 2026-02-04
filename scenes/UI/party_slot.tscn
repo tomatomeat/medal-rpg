@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://xx2shbh4waop"]
+
+[ext_resource type="StyleBox" uid="uid://c2hg57wrdang6" path="res://scenes/UI/standard_outline.tres" id="1_7j6e3"]
+[ext_resource type="Script" uid="uid://fw87jqjg1b0v" path="res://scenes/UI/scripts/party_slot.gd" id="1_j22la"]
+[ext_resource type="FontFile" uid="uid://35ejt2lpdokd" path="res://assets/fonts/ZenKakuGothicNew-Black.ttf" id="1_s1elc"]
+[ext_resource type="PackedScene" uid="uid://cjy0mc6bghxer" path="res://scenes/UI/medal_ui.tscn" id="2_dbuns"]
+[ext_resource type="StyleBox" uid="uid://b5kbwv7cw8oso" path="res://scenes/UI/standard_hover.tres" id="4_1vmer"]
+[ext_resource type="StyleBox" uid="uid://vgbudgiuuyxt" path="res://scenes/UI/standard_frame.tres" id="4_kpjvf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dbuns"]
+font = ExtResource("1_s1elc")
+font_size = 14
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kpjvf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j22la"]
+
+[node name="PartySlot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_j22la")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 82)
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("4_kpjvf")
+
+[node name="Name" type="Label" parent="Panel"]
+z_index = 1
+layout_mode = 0
+offset_left = 88.0
+offset_right = 384.0
+offset_bottom = 26.0
+text = "NAME"
+label_settings = SubResource("LabelSettings_dbuns")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VisualRoot" type="Control" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VisualRoot"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+offset_left = -26.0
+offset_top = -25.0
+offset_right = 44.0
+offset_bottom = 45.0
+mouse_filter = 2
+
+[node name="MedalUI" parent="Panel/VisualRoot/CenterContainer" instance=ExtResource("2_dbuns")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kpjvf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j22la")
+theme_override_styles/hover = ExtResource("4_1vmer")
+theme_override_styles/focus = ExtResource("1_7j6e3")

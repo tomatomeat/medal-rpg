@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://txlv03a0ddkf"]
+
+[ext_resource type="Script" uid="uid://dotv4c54rbkqr" path="res://scenes/scripts/front_end.gd" id="1_g3jih"]
+[ext_resource type="FontFile" uid="uid://35ejt2lpdokd" path="res://assets/fonts/ZenKakuGothicNew-Black.ttf" id="2_g3jih"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3jih"]
+font = ExtResource("2_g3jih")
+font_size = 41
+outline_color = Color(1, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.20392157)
+
+[node name="FrontEnd" type="Node2D"]
+script = ExtResource("1_g3jih")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainProgressButton" type="Button" parent="UI/Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.28300002
+anchor_top = 0.80200005
+anchor_right = 0.735
+anchor_bottom = 0.943
+offset_left = -0.016021729
+offset_top = 0.30395508
+offset_right = 0.27996826
+offset_bottom = -0.06402588
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+
+[node name="Label" type="Label" parent="UI/Control/Panel/MainProgressButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "進む"
+label_settings = SubResource("LabelSettings_g3jih")
+horizontal_alignment = 1
+vertical_alignment = 1

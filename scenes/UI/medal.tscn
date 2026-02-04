@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp3oxsvua833n"]
+
+[ext_resource type="Texture2D" uid="uid://b5jed32xur8vi" path="res://assets/medals/back.png" id="1_4u6uv"]
+[ext_resource type="Shader" uid="uid://ds0ljv1fyxck6" path="res://assets/shader/medal.gdshader" id="1_ibe84"]
+[ext_resource type="Texture2D" uid="uid://d25u01b6qcklr" path="res://assets/medals/line.png" id="2_804wf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1j68"]
+shader = ExtResource("1_ibe84")
+shader_parameter/radius = 0.50000002375
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/smoothness = 0.0
+
+[node name="Medal" type="Node2D"]
+
+[node name="icon" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+material = SubResource("ShaderMaterial_r1j68")
+position = Vector2(1.5258789e-05, 1.5258789e-05)
+scale = Vector2(2.999999, 2.999999)
+
+[node name="line" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 4
+position = Vector2(-2.771616e-06, -4.053116e-06)
+scale = Vector2(0.154, 0.154)
+texture = ExtResource("2_804wf")
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 4
+position = Vector2(1.5258789e-05, 1.5258789e-05)
+scale = Vector2(0.15432099, 0.15432099)
+texture = ExtResource("1_4u6uv")

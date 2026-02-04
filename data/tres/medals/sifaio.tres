@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="MedalData" load_steps=11 format=3 uid="uid://bj10lxd14cgb1"]
+
+[ext_resource type="Script" uid="uid://cpv8mpsqiq303" path="res://data/enums/element_type.gd" id="1_5k038"]
+[ext_resource type="Script" uid="uid://dulcdx37632oo" path="res://data/data_resources/skill_data.gd" id="2_ry8qp"]
+[ext_resource type="Script" uid="uid://bm4mw7u8ibfjv" path="res://data/data_resources/medal_data.gd" id="3_8s3ah"]
+[ext_resource type="Script" uid="uid://c8ge437vlu21b" path="res://data/enums/affinity_type.gd" id="4_lxrmf"]
+
+[sub_resource type="Resource" id="Resource_t078r"]
+script = ExtResource("1_5k038")
+element = 5
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_ytx2y"]
+script = ExtResource("1_5k038")
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_3dxc4"]
+script = ExtResource("1_5k038")
+element = 5
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_r08ee"]
+script = ExtResource("1_5k038")
+element = 4
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_vkgni"]
+script = ExtResource("4_lxrmf")
+affinity = 9
+metadata/_custom_type_script = "uid://c8ge437vlu21b"
+
+[sub_resource type="Resource" id="Resource_5714b"]
+script = ExtResource("4_lxrmf")
+affinity = 3
+metadata/_custom_type_script = "uid://c8ge437vlu21b"
+
+[resource]
+script = ExtResource("3_8s3ah")
+icon_path = "res://assets/medals/icon/sifaio.png"
+medal_id = "sifaio"
+name = "NAME_SIFAIO"
+control_cost = 3
+base_hlt = 75
+base_slh = 70
+base_blt = 120
+base_alt = 100
+base_slr = 80
+base_blr = 90
+base_alr = 70
+base_spd = 95
+elements = Array[ExtResource("1_5k038")]([SubResource("Resource_3dxc4"), SubResource("Resource_r08ee")])
+effectiveness_elements = Array[ExtResource("1_5k038")]([SubResource("Resource_t078r"), SubResource("Resource_ytx2y")])
+weakness_affinity = Array[ExtResource("4_lxrmf")]([SubResource("Resource_vkgni"), SubResource("Resource_5714b")])
+primary_color = Color(0.9372549, 0.9372549, 0.9372549, 1)
+secondary_color = Color(1, 1, 0.62352943, 1)

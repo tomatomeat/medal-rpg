@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="MedalData" load_steps=14 format=3 uid="uid://bdakgf35uket8"]
+
+[ext_resource type="Script" uid="uid://cpv8mpsqiq303" path="res://data/enums/element_type.gd" id="1_ytx2y"]
+[ext_resource type="Script" uid="uid://dulcdx37632oo" path="res://data/data_resources/skill_data.gd" id="2_sr5ww"]
+[ext_resource type="Script" uid="uid://bm4mw7u8ibfjv" path="res://data/data_resources/medal_data.gd" id="3_3dxc4"]
+[ext_resource type="Script" uid="uid://c8ge437vlu21b" path="res://data/enums/affinity_type.gd" id="4_r08ee"]
+
+[sub_resource type="Resource" id="Resource_t078r"]
+script = ExtResource("1_ytx2y")
+element = 7
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_ytx2y"]
+script = ExtResource("1_ytx2y")
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_sr5ww"]
+script = ExtResource("1_ytx2y")
+element = 1
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_3dxc4"]
+script = ExtResource("1_ytx2y")
+element = 1
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_r08ee"]
+script = ExtResource("1_ytx2y")
+element = 5
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_qyfkn"]
+script = ExtResource("1_ytx2y")
+element = 7
+metadata/_custom_type_script = "uid://cpv8mpsqiq303"
+
+[sub_resource type="Resource" id="Resource_vkgni"]
+script = ExtResource("4_r08ee")
+affinity = 9
+metadata/_custom_type_script = "uid://c8ge437vlu21b"
+
+[sub_resource type="Resource" id="Resource_5714b"]
+script = ExtResource("4_r08ee")
+metadata/_custom_type_script = "uid://c8ge437vlu21b"
+
+[sub_resource type="Resource" id="Resource_uqs60"]
+script = ExtResource("4_r08ee")
+affinity = 10
+metadata/_custom_type_script = "uid://c8ge437vlu21b"
+
+[resource]
+script = ExtResource("3_3dxc4")
+icon_path = "res://assets/medals/icon/riroffar.png"
+medal_id = "riroffar"
+name = "NAME_RIROFFAR"
+control_cost = 2
+base_hlt = 65
+base_slh = 50
+base_blt = 30
+base_alt = 110
+base_slr = 40
+base_blr = 60
+base_alr = 80
+base_spd = 90
+elements = Array[ExtResource("1_ytx2y")]([SubResource("Resource_3dxc4"), SubResource("Resource_r08ee"), SubResource("Resource_qyfkn")])
+effectiveness_elements = Array[ExtResource("1_ytx2y")]([SubResource("Resource_t078r"), SubResource("Resource_ytx2y"), SubResource("Resource_sr5ww")])
+weakness_affinity = Array[ExtResource("4_r08ee")]([SubResource("Resource_vkgni"), SubResource("Resource_5714b"), SubResource("Resource_uqs60")])
+primary_color = Color(0.21960784, 0.5686275, 0.38431373, 1)
+secondary_color = Color(1, 0.35686275, 0.72156864, 1)

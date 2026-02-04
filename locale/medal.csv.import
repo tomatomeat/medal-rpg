@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dxnxixkco4bek"
+
+[deps]
+
+files=["res://locale/medal.ja.translation", "res://locale/medal.en.translation"]
+
+source_file="res://locale/medal.csv"
+dest_files=["res://locale/medal.ja.translation", "res://locale/medal.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0
