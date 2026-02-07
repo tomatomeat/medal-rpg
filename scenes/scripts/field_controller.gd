@@ -13,12 +13,13 @@ func _ready():
 	if PlayerManager.pending_apply:
 		PlayerManager.apply_to_field(self)
 
-func load_area(scene: PackedScene, exit_id := "", area_id := ""):
+func load_area(area_id := "", exit_id := ""):
 	current_area_id = area_id
 	if current_area:
 		current_area.queue_free()
-
-	current_area = scene.instantiate()
+		
+	var area_scene = AreaDataBase.get_scene(area_id)
+	current_area = area_scene.instantiate()
 	area_root.add_child(current_area)
 	
 	await get_tree().process_frame
@@ -33,5 +34,6 @@ func load_area(scene: PackedScene, exit_id := "", area_id := ""):
 		player.global_position = current_area.get_node(
 			"SpawnPoints/default"
 		).global_position
-	
+	print("ho")
+	PlayerState.current_area_id = current_area_id
 	EncounterManager.set_area(current_area_id,true)

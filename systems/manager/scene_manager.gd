@@ -2,6 +2,7 @@ extends Node
 
 var current_scene: Node
 var current_scene_id: int
+var previous_scene_id: int
 var context: Dictionary = {}
 
 const SCENE_TABLE := {
@@ -20,6 +21,8 @@ func _ready() -> void:
 # =========================
 func change_scene(scene_id: int, ctx: Dictionary = {}) -> void:
 	context = ctx.duplicate(true)
+	previous_scene_id = current_scene_id
+	
 	current_scene_id = scene_id
 
 	var path :String = SCENE_TABLE.get(scene_id, "")

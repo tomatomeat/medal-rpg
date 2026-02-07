@@ -35,15 +35,8 @@ func initialize() -> void:
 	p2_active_medal_id = state.p2_party[0].instance_id
 
 	state.medal_map.clear()
-	for m in state.p1_party:
-		var ms := m.create_medal_state()
-		ms.side = MedalState.Side.P1
-		state.medal_map[m.instance_id] = ms
-
-	for m in state.p2_party:
-		var ms := m.create_medal_state()
-		ms.side = MedalState.Side.P2
-		state.medal_map[m.instance_id] = ms
+	for m:MedalState in state.p1_party+state.p2_party:
+		state.medal_map[m.source.instance_id] = m
 
 	_register_ability_hooks()
 

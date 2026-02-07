@@ -18,13 +18,14 @@ func _ready():
 	for slot in vbox_container.get_children():
 		slot.pressed.connect(_on_party_slot_pressed)
 		slot.remove_requested.connect(_on_party_remove)
+	open()
 
 # --------------------
 # Open / Confirm
 # --------------------
 
-func open(from_scene_id: int):
-	return_scene_id = from_scene_id
+func open():
+	return_scene_id = SceneManager.previous_scene_id
 	visible = true
 	temp_party = PartyManager.get_party().duplicate()
 	_refresh_medals()
@@ -67,8 +68,7 @@ func close():
 	selected_medal_id = ""
 	temp_party.clear()
 	
-	if return_scene_id:
-		SceneManager.change_scene(return_scene_id,{"Position":Vector2.ZERO})
+	SceneManager.change_scene(return_scene_id,{"Position":Vector2.ZERO})
 
 # --------------------
 # Party Slots（仮パーティ）

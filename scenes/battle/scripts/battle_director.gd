@@ -3,6 +3,8 @@ extends Node
 signal log_message(message: String)
 signal animation_requested(anim_data: Dictionary)
 
+signal request_place_medals(placements)
+
 var manager: BattleManager
 var setup: BattleSetup
 
@@ -107,3 +109,12 @@ func _open_command_for_current_actor():
 func _refresh_ui():
 	var medal: MedalState = manager.state.medal_map[manager.p1_active_medal_id]
 	#status_ui.update_status(medal.to_ui_data())
+
+func place_medals():
+	var p1_party = manager.state.p1_party
+	var p2_party = manager.state.p2_party
+	var placements := {
+		p1 = p1_party,
+		p2 = p2_party
+	}
+	emit_signal("request_place_medals", placements)

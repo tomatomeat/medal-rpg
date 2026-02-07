@@ -35,6 +35,7 @@ EncounterManager="*res://systems/manager/encounter_manager.gd"
 EncounterZoneDataBase="*res://data/data_bases/encounter_zone_data_base.gd"
 AreaDataBase="*res://data/data_bases/area_data_base.gd"
 SceneID="*res://scenes/UI/scene_id.gd"
+PlayerState="*res://systems/player/player_state.gd"
 
 [display]
 
