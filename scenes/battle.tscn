@@ -1,10 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://ctkqjupy1f6yf"]
+[gd_scene load_steps=18 format=3 uid="uid://ctkqjupy1f6yf"]
 
-[ext_resource type="Script" uid="uid://d1twocosnae48" path="res://scenes/battle/scripts/battle_director.gd" id="1_7gynk"]
 [ext_resource type="FontFile" uid="uid://35ejt2lpdokd" path="res://assets/fonts/ZenKakuGothicNew-Black.ttf" id="1_ffvsa"]
 [ext_resource type="Script" uid="uid://7da3bm2fvug5" path="res://scenes/UI/scripts/main_command.gd" id="1_fh7rg"]
 [ext_resource type="Script" uid="uid://5b1nba23ld1i" path="res://scenes/UI/scripts/action_select.gd" id="2_pll4o"]
-[ext_resource type="PackedScene" uid="uid://biyv4spltqi4g" path="res://scenes/UI/health_bar.tscn" id="2_xd4uy"]
 [ext_resource type="StyleBox" uid="uid://vgbudgiuuyxt" path="res://scenes/UI/standard_frame.tres" id="3_03edq"]
 [ext_resource type="StyleBox" uid="uid://b5kbwv7cw8oso" path="res://scenes/UI/standard_hover.tres" id="4_22uqi"]
 [ext_resource type="Script" uid="uid://lcuhqlh4h6ii" path="res://scenes/UI/scripts/skill_select.gd" id="4_pll4o"]
@@ -50,34 +48,31 @@ grow_vertical = 2
 
 [node name="Command" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchor_left = 0.643
-anchor_top = 0.614
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.26397705
-offset_top = -50.87201
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fh7rg")
 
 [node name="ActionSelect" type="Control" parent="CanvasLayer/Control/Command"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 57.0
+offset_left = 960.0
+offset_top = 384.0
+offset_right = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_pll4o")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Command/ActionSelect"]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 122.0
-offset_top = 33.0
-offset_right = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 14
@@ -148,7 +143,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -29.0
+offset_left = 960.0
+offset_top = 384.0
+offset_right = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_pll4o")
@@ -161,10 +158,12 @@ anchor_left = 0.51600003
 anchor_top = 0.067
 anchor_right = 0.90000004
 anchor_bottom = 0.155
-offset_left = -0.07601929
-offset_top = 0.018993378
-offset_right = 0.10003662
-offset_bottom = -0.050994873
+offset_left = 23.263992
+offset_top = -62.512005
+offset_right = 29.599976
+offset_bottom = -60.080006
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/normal = ExtResource("3_03edq")
 theme_override_styles/hover = ExtResource("4_22uqi")
 
@@ -184,13 +183,9 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Command/SkillSelect"]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 122.0
-offset_top = 65.0
-offset_right = -41.0
-offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 14
@@ -277,7 +272,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -29.0
+offset_left = 832.0
+offset_top = 384.0
+offset_right = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_agsc7")
@@ -287,8 +284,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 173.0
-offset_bottom = -112.0
+offset_top = 78.915
+offset_bottom = -206.08496
 grow_horizontal = 2
 grow_vertical = 2
 text = "交代しますか？"
@@ -300,9 +297,9 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 38)
 layout_mode = 0
 offset_left = 49.0
-offset_top = 221.0
+offset_top = 142.27
 offset_right = 207.0
-offset_bottom = 259.0
+offset_bottom = 180.27
 theme_override_styles/normal = ExtResource("3_03edq")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Command/Rotation/Yes"]
@@ -322,9 +319,9 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 38)
 layout_mode = 0
 offset_left = 212.0
-offset_top = 221.0
+offset_top = 142.27
 offset_right = 370.0
-offset_bottom = 259.0
+offset_bottom = 180.27
 theme_override_styles/normal = ExtResource("3_03edq")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Command/Rotation/No"]
@@ -344,37 +341,13 @@ vertical_alignment = 1
 script = ExtResource("5_py4tk")
 
 [node name="Allies" type="Control" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="HealthBar" parent="CanvasLayer/Control/Allies" instance=ExtResource("2_xd4uy")]
-layout_mode = 0
-offset_left = 99.280136
-offset_top = 480.0
-offset_right = 367.99408
-offset_bottom = 516.0
-scale = Vector2(0.8400006, 1)
-
-[node name="HealthBar2" parent="CanvasLayer/Control/Allies" instance=ExtResource("2_xd4uy")]
-layout_mode = 0
-offset_left = 51.000004
-offset_top = 552.0
-offset_right = 220.53125
-offset_bottom = 577.0
-scale = Vector2(0.8400006, 1)
-
-[node name="HealthBar3" parent="CanvasLayer/Control/Allies" instance=ExtResource("2_xd4uy")]
-layout_mode = 0
-offset_left = 233.00002
-offset_top = 552.0
-offset_right = 402.53125
-offset_bottom = 577.0
-scale = Vector2(0.8400006, 1)
+mouse_filter = 2
 
 [node name="Status" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -383,6 +356,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Info" type="Control" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -391,18 +365,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="BattleDirector" type="Node" parent="." node_paths=PackedStringArray("command_ui")]
-script = ExtResource("1_7gynk")
-command_ui = NodePath("../CanvasLayer/Control/Command")
+mouse_filter = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="CommandManager" type="Node" parent="." node_paths=PackedStringArray("command_ui", "director")]
+[node name="CommandManager" type="Node" parent="." node_paths=PackedStringArray("command_ui")]
 script = ExtResource("6_py4tk")
 command_ui = NodePath("../CanvasLayer/Control/Command")
-director = NodePath("../BattleDirector")
 
 [node name="BattleView" type="Node2D" parent="."]
 script = ExtResource("13_22uqi")
@@ -439,7 +409,6 @@ position = Vector2(704, 72)
 
 [node name="EffectLayer" type="Node2D" parent="BattleView"]
 
-[connection signal="action_decided" from="CanvasLayer/Control/Command" to="BattleDirector" method="on_action_confirm"]
 [connection signal="rotation_selected" from="CanvasLayer/Control/Command/ActionSelect" to="CanvasLayer/Control/Command" method="_on_rotation_chosen"]
 [connection signal="skill_selected" from="CanvasLayer/Control/Command/ActionSelect" to="CanvasLayer/Control/Command" method="_on_skill_chosen"]
 [connection signal="pressed" from="CanvasLayer/Control/Command/ActionSelect/VBoxContainer/Skill" to="CanvasLayer/Control/Command/ActionSelect" method="_on_skill_pressed"]

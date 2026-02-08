@@ -15,6 +15,11 @@ var current_skills: Array
 # Entry
 # ========================
 
+func _ready():
+	action_select.visible = true
+	skill_select.visible = false
+	rotation_ui.visible = false
+
 func open_for_medal(medal:MedalState):
 	current_user_id = medal.source.instance_id
 	current_skills = medal.equipped_skill_ids

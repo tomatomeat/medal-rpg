@@ -10,8 +10,8 @@ func prepare(encounter_instance: EncounterInstance) -> void:
 	var p1_party_instance = PartyManager.get_party_instances()
 	var p2_party_instance = encounter_party
 	
-	var p1_party = []
-	var p2_party = []
+	var p1_party :Array[MedalState] = []
+	var p2_party :Array[MedalState] = []
 	
 	for m in p1_party_instance:
 		var ms := m.create_medal_state()

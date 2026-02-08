@@ -8,8 +8,10 @@ signal rotation_selected
 @onready var rotation_btn := $VBoxContainer/Rotation
 
 func _ready():
-	skill_btn.pressed.connect(_on_skill_pressed)
-	rotation_btn.pressed.connect(_on_rotation_pressed)
+	if not skill_btn.pressed.is_connected(_on_skill_pressed):
+		skill_btn.pressed.connect(_on_skill_pressed)
+	if not rotation_btn.pressed.is_connected(_on_rotation_pressed):
+		rotation_btn.pressed.connect(_on_rotation_pressed)
 
 func open():
 	visible = true

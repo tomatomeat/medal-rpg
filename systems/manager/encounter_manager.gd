@@ -89,6 +89,7 @@ func _process(delta: float) -> void:
 
 # エリア制御（FieldController から呼ぶ）
 func set_area(area_id: String, enable: bool) -> void:
+	print("START")
 	current_area_id = area_id
 	encounter_enabled = enable
 
@@ -107,6 +108,7 @@ func on_zone_enter(zone: EncounterZone) -> void:
 		# gauge = 0.0  # 入った瞬間リセット（重要） # じゃない
 
 func on_zone_exit(zone: EncounterZone) -> void:
-	if active_zone == zone:
-		active_zone = null
+	pass
+	#if active_zone == zone:
+		#active_zone = null
 		#gauge = 0.0  # 出たら完全リセット # しない

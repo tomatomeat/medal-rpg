@@ -3,7 +3,7 @@ extends Node
 signal log_message(message: String)
 signal animation_requested(anim_data: Dictionary)
 
-signal request_place_medals(placements)
+signal request_battle_context(context)
 
 var manager: BattleManager
 var setup: BattleSetup
@@ -12,8 +12,7 @@ var _context_ready := false
 var _scene_ready := false
 
 # UI参照（Battleシーンでセット）
-@export var command_ui: CommandUI
-#@export var status_ui
+var command_ui: CommandUI
 
 # ========================
 # Battle Start
@@ -54,6 +53,7 @@ func on_battle_scene_ready():
 	_try_start_battle()
 
 func _try_start_battle():
+	print(_context_ready,_scene_ready)
 	if not _context_ready:
 		return
 	if not _scene_ready:
@@ -62,6 +62,7 @@ func _try_start_battle():
 	_start_battle()
 
 func _start_battle():
+	setup_battleview()
 	_open_command_for_current_actor()
 
 # ========================
@@ -99,6 +100,9 @@ func _on_turn_ended(turn_number: int):
 # UI Control
 # ========================
 
+func bind_command_ui(ui:CommandUI):
+	command_ui = ui
+
 func _open_command_for_current_actor():
 	var medal: MedalState = manager.state.medal_map.get(manager.p1_active_medal_id)
 	if medal == null:
@@ -110,11 +114,6 @@ func _refresh_ui():
 	var medal: MedalState = manager.state.medal_map[manager.p1_active_medal_id]
 	#status_ui.update_status(medal.to_ui_data())
 
-func place_medals():
-	var p1_party = manager.state.p1_party
-	var p2_party = manager.state.p2_party
-	var placements := {
-		p1 = p1_party,
-		p2 = p2_party
-	}
-	emit_signal("request_place_medals", placements)
+func setup_battleview():
+	print("battleview")
+	emit_signal("request_battle_context", manager.state)

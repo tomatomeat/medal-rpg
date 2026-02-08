@@ -25,7 +25,7 @@ func apply_to_field(field):
 		return
 
 	field.load_area(data.current_area_id,data.last_exit_id)
-	pending_apply = false
+	#pending_apply = false
 
 func get_save_data() -> Dictionary:
 	return {

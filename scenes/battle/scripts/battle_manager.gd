@@ -31,8 +31,8 @@ func initialize() -> void:
 	state.p1_party = context.p1_party
 	state.p2_party = context.p2_party
 
-	p1_active_medal_id = state.p1_party[0].instance_id
-	p2_active_medal_id = state.p2_party[0].instance_id
+	p1_active_medal_id = state.p1_party[0].source.instance_id
+	p2_active_medal_id = state.p2_party[0].source.instance_id
 
 	state.medal_map.clear()
 	for m:MedalState in state.p1_party+state.p2_party:
