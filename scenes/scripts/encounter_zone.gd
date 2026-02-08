@@ -14,14 +14,16 @@ func _ready():
 		if body.is_in_group("Player"):
 			EncounterManager.on_zone_enter(self)
 
-func _on_body_entered(body):
-	print("in")
-	if not enabled:
-		return
-	if body.name == "Player":
-		EncounterManager.on_zone_enter(self)
 
-func _on_body_exited(body):
-	print("out")
-	if body.name == "Player":
-		EncounterManager.on_zone_exit(self)
+
+#func _on_body_entered(body):
+	#print("in")
+	#if not enabled:
+		#return
+	#if body.name == "Player":
+		#EncounterManager.on_zone_enter(self)
+#
+#func _on_body_exited(body):
+	#print("out")
+	#if body.name == "Player":
+		#EncounterManager.on_zone_exit(self)
